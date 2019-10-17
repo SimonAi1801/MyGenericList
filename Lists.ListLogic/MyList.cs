@@ -357,5 +357,10 @@ namespace Lists.ListLogic
                 }
             }
         }
+        public void Sort(MyList list)
+        {
+            Sort(list,null);
+        }
     }
+
 }
