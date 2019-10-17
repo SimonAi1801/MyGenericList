@@ -317,7 +317,11 @@ namespace Lists.ListLogic
         {
             return new ListEnumerator(_head);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="comparer"></param>
         public static void Sort(MyList list, IComparer comparer)
         {
             if (list._head != null)
