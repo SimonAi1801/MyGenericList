@@ -357,7 +357,7 @@ namespace Lists.ListLogic
                 }
             }
         }
-        public void Sort(MyList list)
+        public static void Sort(MyList list)
         {
             Sort(list,null);
         }
