@@ -1,15 +1,16 @@
 ﻿using System.Collections;
 using System;
+using System.Collections.Generic;
 
 namespace Lists.ListLogic
 {
-    internal class ListEnumerator : IEnumerator
+    internal class ListEnumerator<T> : IEnumerator<T>
     {
-        private Node _head;
-        private Node _currentNode;
+        private Node<T> _head;
+        private Node<T> _currentNode;
         private int _pos = 0;
 
-        public ListEnumerator(Node head)
+        public ListEnumerator(Node<T> head)
         {
             _head = head;
             Reset();
@@ -25,6 +26,12 @@ namespace Lists.ListLogic
                 }
                 return _currentNode.DataObject;
             }
+        }
+
+        T IEnumerator<T>.Current => _currentNode.DataObject;
+
+        public void Dispose()
+        {
         }
 
         public bool MoveNext()

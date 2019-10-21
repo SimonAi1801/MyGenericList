@@ -14,7 +14,7 @@ namespace Lists.Test
         public void Add_First_ShouldReturnIndexZero()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<string> list = new MyList<string>();
             //Act
             int index = list.Add("Müller");
             //Assert
@@ -25,7 +25,7 @@ namespace Lists.Test
         public void Add_Third_ShouldReturnIndexTwo()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<string> list = new MyList<string>();
             //Act
             list.Add("Müller");
             list.Add("Maier");
@@ -38,7 +38,7 @@ namespace Lists.Test
         public void IndexOf_OneOfOne_ShouldReturnIndexZero()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<string> list = new MyList<string>();
             list.Add("Maier");
             //Act
             int index = list.IndexOf("Maier");
@@ -50,7 +50,7 @@ namespace Lists.Test
         public void IndexOf_Middle_ShouldReturnIndexOne()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<string> list = new MyList<string>();
             list.Add("Maier");
             list.Add("Müller");
             list.Add("Huber");
@@ -64,7 +64,7 @@ namespace Lists.Test
         public void IndexOf_MiddleIntObject_ShouldReturnIndexOne()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -78,7 +78,7 @@ namespace Lists.Test
         public void IndexOf_NotInList_ShouldReturnMinusOne()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -92,7 +92,7 @@ namespace Lists.Test
         public void GetEnumerator_ThreeElements_ShouldReturnValidData()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -115,7 +115,7 @@ namespace Lists.Test
         public void Clear_EmptyList_ShouldBeEmpty()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             //Act
             list.Clear();
             //Assert
@@ -126,7 +126,7 @@ namespace Lists.Test
         public void Clear_ListWithSomeEntries_ShouldBeEmpty()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -140,7 +140,7 @@ namespace Lists.Test
         public void TContains_EmptyList_ShouldReturnFalse()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             //Act
             bool found = list.Contains(5);
             //Assert
@@ -151,7 +151,7 @@ namespace Lists.Test
         public void Contains_ItemIsNotInList_ShouldReturnFalse()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -165,7 +165,7 @@ namespace Lists.Test
         public void Contains_ItemInList_ShouldReturnTrue()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -179,7 +179,7 @@ namespace Lists.Test
         public void Insert_OnIndexOne_ShouldReturnIndexOne()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -193,7 +193,7 @@ namespace Lists.Test
         public void Insert_Zero_ShouldReturnIndexZero()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -207,7 +207,7 @@ namespace Lists.Test
         public void Insert_End_ShouldReturnIndexThree()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -221,7 +221,7 @@ namespace Lists.Test
         public void Insert_IndexTooLarge_ShouldReturnMinusOne()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -235,7 +235,7 @@ namespace Lists.Test
         public void T19_Insert_IndexNegative_ShouldReturnMinusOne()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -249,7 +249,7 @@ namespace Lists.Test
         public void Insert_EmptyList_ShouldReturnIndexZero()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             //Act
             list.Insert(0, 99);
             //Assert
@@ -260,7 +260,7 @@ namespace Lists.Test
         public void Remove_MiddleElement_ShouldReturnCountTwo()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -275,7 +275,7 @@ namespace Lists.Test
         public void Remove_FirstElement_ShouldSetNewFirstElement()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -291,7 +291,7 @@ namespace Lists.Test
         public void Remove_LastElement_ShouldReturnCountTwo()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -307,7 +307,7 @@ namespace Lists.Test
         public void Remove_ElementNotInList_ShouldChangeNothing()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -321,7 +321,7 @@ namespace Lists.Test
         public void Remove_EmptyList_ShouldChangeNothing()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             //Act
             list.Remove(6);
             //Assert
@@ -333,7 +333,7 @@ namespace Lists.Test
         public void RemoveAt_MiddleElement_ShouldReturnCountTwo()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -348,7 +348,7 @@ namespace Lists.Test
         public void RemoveAt_FirstElement_ShouldSetNewFirstElement()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -364,7 +364,7 @@ namespace Lists.Test
         public void RemoveAt_LastElement_ShouldReturnCountTwo()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -380,7 +380,7 @@ namespace Lists.Test
         public void RemoveAt_ElementNotInList_ShouldChangeNothing()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -394,7 +394,7 @@ namespace Lists.Test
         public void RemoveAt_EmptyList_ShouldChangeNothing()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             //Act
             list.RemoveAt(0);
             //Assert
@@ -406,7 +406,7 @@ namespace Lists.Test
         public void CopyTo_FullList_ShouldReturnFilledArray()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -422,7 +422,7 @@ namespace Lists.Test
         public void CopyTo_PartList_ShouldReturnArrayWithNullAtEnd()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -438,7 +438,7 @@ namespace Lists.Test
         public void CopyTo_LastElement_ShouldReturnArrayWithOneElement()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -453,7 +453,7 @@ namespace Lists.Test
         public void CopyTo_TargetTooSmall_ShouldLeftArrayEmpty()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -471,7 +471,7 @@ namespace Lists.Test
         public void Indexer_InsertMiddle_ShouldIncreaseList()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -485,7 +485,7 @@ namespace Lists.Test
         public void Indexer_InsertFirst_ShouldReturnCorrectIndex()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -499,7 +499,7 @@ namespace Lists.Test
         public void Indexer_ReadMiddle_ShouldReturnCorrectValue()
         {
             //Arrange
-            MyList list = new MyList();
+            MyList<int> list = new MyList<int>();
             list.Add(3);
             list.Add(4);
             list.Add(5);
@@ -511,7 +511,7 @@ namespace Lists.Test
         [TestMethod()]
         public void Sort_SortOnSvNrAscanding_ShouldBeSortInCorrectorder()
         {
-            MyList list = new MyList();
+            MyList<Person> list = new MyList<Person>();
             Person[] target = new Person[6];
             Person person1 = new Person("Kurt", "Biedermann", "11", "4600");
             Person person2 = new Person("Dominik", "Klein", "12", "4632");
@@ -536,14 +536,14 @@ namespace Lists.Test
             list.Add(person2);
             list.Add(person5);
 
-            MyList.Sort(list, Person.ComparePersonOnSvNrDescanding());
+            MyList<Person>.Sort(list, Person.ComparePersonOnSvNrDescanding());
             list.CopyTo(target, 0);
             CollectionAssert.AreEqual(target,expected);
         }
         [TestMethod]
         public void Sort_SortOnZipAscanding_ShouldBeSortInCorrectorder()
         {
-            MyList list = new MyList();
+            MyList<Person> list = new MyList<Person>();
             Person[] target = new Person[6];
             Person person1 = new Person("Kurt", "Biedermann", "11", "4600");
             Person person2 = new Person("Dominik", "Klein", "12", "4632");
@@ -568,14 +568,14 @@ namespace Lists.Test
             list.Add(person2);
             list.Add(person5);
 
-            MyList.Sort(list, Person.ComparePersonOnZipDescanding());
+            MyList<Person>.Sort(list, Person.ComparePersonOnZipDescanding());
             list.CopyTo(target, 0);
             CollectionAssert.AreEqual(target, expected);
         }
         [TestMethod]
         public void Sort_SortOnLastNameAscanding_ShouldBeSortInCorrectorder()
         {
-            MyList list = new MyList();
+            MyList<Person> list = new MyList<Person>();
             Person[] target = new Person[6];
             Person person1 = new Person("Kurt", "Biedermann", "11", "4600");
             Person person2 = new Person("Dominik", "Klein", "12", "4632");
@@ -600,17 +600,17 @@ namespace Lists.Test
             list.Add(person2);
             list.Add(person5);
 
-            MyList.Sort(list, null);
+            MyList<Person>.Sort(list, null);
             list.CopyTo(target, 0);
             CollectionAssert.AreEqual(target, expected);
         }
         [TestMethod]
         public void Sort_InvalidSort_ShouldReturnNull()
         {
-            MyList list = new MyList();
+            MyList<Person> list = new MyList<Person>();
             Person[] target = new Person[6];
             Person[] expected = new Person[6];
-            MyList.Sort(list, null);
+            MyList<Person>.Sort(list, null);
             list.CopyTo(target, 0);
             CollectionAssert.AreEqual(target, expected);
         }
