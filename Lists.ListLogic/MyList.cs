@@ -248,32 +248,6 @@ namespace Lists.ListLogic
         /// </summary>
         /// <param name="array">Zielarray, existiert bereits</param>
         /// <param name="index">Startindex</param>
-        public void CopyTo(Array array, int index)
-        {
-            if (index < 0 || index > Count)
-                throw new ArgumentOutOfRangeException();
-
-            if (Count - index <= array.Length)
-            {
-                if (_head != null)
-                {
-                    Node<T> run = _head;
-                    if (index > 0)
-                    {
-                        for (int i = 0; i < index && run != null; i++)
-                        {
-                            run = run.Next;
-                        }
-                    }
-
-                    for (int i = 0; run != null; i++)
-                    {
-                        array.SetValue(run.DataObject, i);
-                        run = run.Next;
-                    }
-                }
-            }
-        }
 
         /// <summary>
         /// Die Anzahl von Elementen in der Liste wird immer 
@@ -368,11 +342,6 @@ namespace Lists.ListLogic
             Add(item);
         }
 
-        public void CopyTo(T[] array, int arrayIndex)
-        {
-            this.CopyTo(array, arrayIndex);
-        }
-
         bool ICollection<T>.Remove(T item)
         {
             this.Remove(item);
@@ -382,6 +351,37 @@ namespace Lists.ListLogic
         IEnumerator<T> IEnumerable<T>.GetEnumerator()
         {
             return new ListEnumerator<T>(_head);
+        }
+
+        public void CopyToOverload(Array array, int arrayIndex)
+        {
+            if (arrayIndex < 0 || arrayIndex > Count)
+                throw new ArgumentOutOfRangeException();
+
+            if (Count - arrayIndex <= array.Length)
+            {
+                if (_head != null)
+                {
+                    Node<T> run = _head;
+                    if (arrayIndex > 0)
+                    {
+                        for (int i = 0; i < arrayIndex && run != null; i++)
+                        {
+                            run = run.Next;
+                        }
+                    }
+                    for (int i = 0; run != null; i++)
+                    {
+                        array.SetValue(run.DataObject, i);
+                        run = run.Next;
+                    }
+                }
+            }
+        }
+
+        public void CopyTo(T[] array, int arrayIndex)
+        {
+            CopyToOverload(array,arrayIndex);
         }
     }
 

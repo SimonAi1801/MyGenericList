@@ -5,17 +5,16 @@ namespace Lists.Entity
 {
     public class Person : IComparable
     {
-        public Person(string firstName, string lastName, string svNr, string zip)
+        public Person(string firstName, string lastName, int age)
         {
             FirstName = firstName;
             LastName = lastName;
-            SvNr = svNr;
-            Zip = zip;
+            Age = age;
         }
         public string LastName { get; set; }
         public string FirstName { get; set; }
-        public string Zip { get; set; }
-        public string SvNr { get; set; }
+
+        public int Age { get; set; }
 
         public int CompareTo(object obj)
         {
@@ -27,14 +26,14 @@ namespace Lists.Entity
             return LastName.CompareTo(person.LastName);
         }
 
-        public static IComparer ComparePersonOnZipDescanding()
+        public static IComparer ComparePersonOnAgeAscanding()
         {
-            return new PersonOnZipDescanding();
+            return new PersonOnAgeDescanding();
         }
 
-        public static IComparer ComparePersonOnSvNrDescanding()
+        public static IComparer ComparePersonOnFirstNameAscandig()
         {
-            return new PersonOnSvNrDescanding();
+            return new PersonOnFirstNameAscanding();
         }
 
         public override string ToString()

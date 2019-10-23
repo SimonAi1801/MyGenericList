@@ -28,7 +28,17 @@ namespace Lists.ListLogic
             }
         }
 
-        T IEnumerator<T>.Current => _currentNode.DataObject;
+        T IEnumerator<T>.Current
+        {
+            get
+            {
+                if (_pos == -1 || _currentNode == null)
+                {
+                    throw new InvalidOperationException();
+                }
+                return _currentNode.DataObject;
+            }
+        }
 
         public void Dispose()
         {
